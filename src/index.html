@@ -6,9 +6,9 @@
   <link href="./output.css" rel="stylesheet">
 </head>
 <body >
-  <section class="bg-mobile-hero md:bg-hero bg-cover bg-center md:bg-top bg-no-repeat">
+  <section id="hero" class="bg-mobile-hero md:bg-hero bg-cover bg-center md:bg-top bg-no-repeat">
     <div class="container max-w-screen-lg mx-auto md:flex flex-col text-white px-8 py-14">
-      <nav class=" flex items-center justify-between">
+      <nav class="flex items-center justify-between">
         <img src="./images/logo.svg">
 
         <nav class="md:flex hidden" id="desktop-menu">
@@ -18,20 +18,20 @@
           <a href="#" class="font-bold hover:underline">Contact</a>
         </nav>
 
-        <button id="hamburger-menu" class="block md:hidden h-8 w-8 relative ">
-          <span class="block bg-white opacity-100 w-7 h-1 mt-1 rounded-lg origin-top-left-0-0 transition"></span>
-          <span class="block bg-white opacity-100 w-7 h-1 mt-1 rounded-lg"></span>
-          <span class="block bg-white opacity-100 w-7 h-1 mt-1 rounded-lg origin-bottom-left-0-100 transition"></span>
+        <button id="hamburger-menu" class="block md:hidden text-white z-50">
+          <span class="hamburger-top-line block bg-white opacity-100 w-6 h-[2px] mt-1 rounded-lg origin-top-left-0-0 transition-transform"></span>
+          <span class="hamburger-middle-line block bg-white opacity-100 w-6 h-[2px] mt-1 rounded-lg"></span>
+          <span class="hamburger-bottom-line block bg-white opacity-100 w-6 h-[2px] mt-1 rounded-lg origin-bottom-left-0-100 transition-transform"></span>
         </button>
 
       </nav>
-      <nav id="mobile-menu" class="flex-col items-center hidden md:hidden gap-y-4 flex-wrap top-16 relative uppercase">
-        <a href="#" class="font-bold hover:underline hover:animate-spin">Home</a>
+      <nav id="mobile-menu" class="flex-col items-center hidden md:hidden gap-y-4 text-lg flex-wrap absolute p-10 top-0 left-0 pt-40  bg-black min-h-screen w-full uppercase">
+        <a href="#" class="font-bold hover:underline">Home</a>
         <a href="#" class="font-bold hover:underline">About</a>
         <a href="#" class="font-bold hover:underline">Services</a>
         <a href="#" class="font-bold hover:underline">Contact</a>
       </nav>
-      <div class="mt-36 mb-36 md:mx-0  p-5 md:p-12 border-2 uppercase text-3xl md:text-6xl md:max-w-lg border-white hover:animate-pulse rounded-md"> Impressive Experiences That Deliver</div>
+      <div class="mt-36 mb-36 md:mx-0 p-5 md:p-12 border-2 uppercase text-3xl md:text-6xl md:max-w-lg border-white hover:animate-pulse rounded-md"> Impressive Experiences That Deliver</div>
     </div>
   </section>
 </body>
@@ -41,8 +41,9 @@
     const mobileMenu = document.getElementById('mobile-menu');
 
     hamburgerBtn.addEventListener('click', () => {
-      hamburgerBtn.classList.toggle('cross-btn');
+      hamburgerBtn.classList.toggle('hamburger-open');
       mobileMenu.classList.toggle('hidden');
+      document.getElementById('hero').classList.toggle('bg-mobile-hero');
       mobileMenu.classList.toggle('flex');
     });
   });

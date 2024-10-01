@@ -2,3 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+.hamburger-middle-line {
+    @apply block;
+}
+
+.hamburger-open {
+    @apply transition-transform ease-linear duration-500;
+    .hamburger-top-line {
+        transform: rotate(45deg) translateY(-1px) translateX(-1px);
+    }
+
+    .hamburger-bottom-line {
+        transform: rotate(-45deg) translateY(2px) translateX(-2px);
+    }
+
+    .hamburger-middle-line {
+        @apply opacity-0;
+    }
+}
