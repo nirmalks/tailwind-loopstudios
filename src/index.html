@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
 </head>
-<body >
+<body>
   <section id="hero" class="bg-mobile-hero md:bg-hero bg-cover bg-center md:bg-top bg-no-repeat">
     <div class="container max-w-screen-lg mx-auto md:flex flex-col text-white px-8 py-14">
       <nav class="flex items-center justify-between">
@@ -102,8 +102,50 @@
           <h4 class="uppercase text-white text-2xl absolute bottom-10 pl-5">make tailwind great</h4>
         </div>
       </div>
+      <div class="flex justify-center mt-10 md:hidden">
+        <button class="btn w-full md:hidden">See All</button>
+      </div>
     </div>
   </section>
+  <footer class="bg-black mt-10">
+    <div class="container max-w-screen-lg mx-auto text-white px-4 md:px-0 py-14 ">
+        <div class="flex flex-col md:flex-row md:space-y-0 md:justify-between md:items-start">
+        <nav class="flex items-center md:items-start flex-col">
+          <img src="./images/logo.svg">
+
+          <nav class="flex flex-col md:flex-row space-y-8 mt-8 md:space-y-0 md:py-4 md:mt-0" >
+            <a href="#" class="font-bold md:mr-6 hover:underline ">Home</a>
+            <a href="#" class="font-bold md:mr-6 hover:underline">About</a>
+            <a href="#" class="font-bold md:mr-6 hover:underline">Services</a>
+            <a href="#" class="font-bold hover:underline">Contact</a>
+          </nav>
+        </nav>
+
+        <div class="flex items-center justify-center md:items-start flex-col space-y-3 mt-10">
+          <nav class="flex " >
+            <div class="h-8 pr-2">
+              <a href="#" class="font-bold md:mr-6 hover:underline ">
+                <img class="h-6" src="./images/icon-facebook.svg">
+              </a>
+            </div>
+            <div class="h-8 pr-2">
+              <a href="#" class="font-bold md:mr-6 hover:underline ">
+                <img class="h-6" src="./images/icon-instagram.svg"></a>
+            </div>
+            <div class="h-8 pr-2">
+              <a href="#" class="font-bold md:mr-6 hover:underline">
+                <img class="h-6" src="./images/icon-pinterest.svg"></a>
+            </div>
+            <div class="h-8 pr-2">
+              <a href="#" class="font-bold hover:underline ">
+                <img class="h-6" src="./images/icon-twitter.svg"></a>
+            </div>
+           </nav>
+          <p class="mt-4 md:mt-1 text-center">© <span id="current-year"></span> Loopstudios. All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -116,6 +158,8 @@
       document.getElementById('hero').classList.toggle('bg-mobile-hero');
       mobileMenu.classList.toggle('flex');
     });
+
+    document.getElementById('current-year').innerText = new Date().getFullYear();
   });
 </script>
 
